@@ -75,20 +75,6 @@
       "email": "juan.test@email.com",
       "document": 1106899,
       "loanApplicationId": 2
-    },
-    {
-      "id": 7,
-      "name": "Juanito",
-      "email": "juan.test@email.com",
-      "document": 1106899,
-      "loanApplicationId": 2
-    },
-    {
-      "id": 8,
-      "name": "Juanito",
-      "email": "juan.test@email.com",
-      "document": 1106899,
-      "loanApplicationId": 2
     }
   ]
 }

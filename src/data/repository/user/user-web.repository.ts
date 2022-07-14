@@ -20,7 +20,6 @@ export class UserWebRepository extends UserRepository {
 
     createUser(user: User) {
         const url = `${this.mockLocalApi.baseUrl}/${this.mockLocalApi.paths.users}`;
-        console.log(3, url);
 
         return this.httpClient
             .post<User>(url, user)

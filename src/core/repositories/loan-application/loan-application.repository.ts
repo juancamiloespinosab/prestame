@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LoanApplication, Status } from '@core/models';
+import { LoanApplication, LoanStatus } from '@core/models';
 import { Observable } from 'rxjs';
 @Injectable({
     providedIn: 'root',
@@ -7,13 +7,9 @@ import { Observable } from 'rxjs';
 export abstract class LoanApplicationRepository {
     abstract createLoanApplication(
         loanApplication: LoanApplication
-    ): Observable<Status>;
-    abstract changeLoanApplicationStatus(
-        loanApplicationId: number,
-        newStatus: Status
-    ): void;
-    abstract payLoanApplication(loanApplicationId: number): void;
+    ): Observable<LoanStatus>;
+    abstract payLoanApplication(loanApplicationId: number): Observable<any>;
     abstract listAllLoanApplicationsByStatus(
-        status: Status
+        status: LoanStatus
     ): Observable<LoanApplication[]>;
 }

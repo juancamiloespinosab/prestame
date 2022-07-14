@@ -1,6 +1,6 @@
-import { LoanStatus } from './loan-status.model';
+import { LoanStatus } from '@core/models';
 
-export interface LoanApplication {
+export interface LoanApplicationWeb {
     id: number;
     amount: number;
     paymentDate: Date;
