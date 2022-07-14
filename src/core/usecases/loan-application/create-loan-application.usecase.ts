@@ -1,7 +1,7 @@
 
 import { Injectable } from '@angular/core';
-import { LoanApplication, Status } from '@app/core/models';
-import { LoanApplicationRepository, UserRepository } from '@app/core/repositories';
+import { LoanApplication, Status } from '@core/models';
+import { LoanApplicationRepository, UserRepository } from '@core/repositories';
 import { Observable } from 'rxjs';
 
 @Injectable({

@@ -1,4 +1,4 @@
-import { LoanApplication, Status } from "@app/core/models";
+import { LoanApplication, Status } from "@core/models";
 import { Observable } from "rxjs";
 
 export abstract class LoanApplicationRepository {

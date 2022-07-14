@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LoanApplicationRepository } from '@app/core/repositories';
+import { LoanApplicationRepository } from '@core/repositories';
 
 @Injectable({
     providedIn: 'root',

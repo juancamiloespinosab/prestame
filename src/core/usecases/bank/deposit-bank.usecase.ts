@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { Bank } from "@app/core/models";
-import { BankRepository } from "@app/core/repositories";
+import { Bank } from "@core/models";
+import { BankRepository } from "@core/repositories";
 import { Observable } from "rxjs";
 
 @Injectable({

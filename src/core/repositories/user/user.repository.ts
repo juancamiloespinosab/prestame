@@ -1,4 +1,4 @@
-import { User } from '@app/core/models';
+import { User } from '@core/models';
 
 export abstract class UserRepository {
     abstract createUser(user: User): void;
