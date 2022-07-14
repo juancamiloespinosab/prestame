@@ -5,4 +5,6 @@ export interface LoanApplication {
     amount: number;
     paymentDate: Date;
     status: Status;
+    payed: boolean;
+    userId: number;
 }

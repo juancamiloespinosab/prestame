@@ -1,0 +1,73 @@
+{
+  "loans": [
+    {
+      "id": 1,
+      "amount": 100000,
+      "paymentDate": "Wed Jul 13 2022",
+      "status": "approved",
+      "payed": false
+    },
+    {
+      "amount": 50000,
+      "paymentDate": "Wed Jul 13 2022",
+      "status": "approved",
+      "payed": true,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "amount": 80000,
+      "paymentDate": "Wed Jul 12 2022",
+      "status": "rejected",
+      "payed": false
+    },
+    {
+      "id": 4,
+      "amount": 75000,
+      "paymentDate": "Wed Jul 10 2022",
+      "status": "approved",
+      "payed": false
+    },
+    {
+      "amount": 100,
+      "paymentDate": "Wed Jul 13 2022",
+      "status": "approved",
+      "payed": false,
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Jose Arturo López",
+      "email": "jose.lopez@email.com",
+      "document": 123456,
+      "loanId": 1
+    },
+    {
+      "id": 2,
+      "name": "Camila Ortiz",
+      "email": "camila.ortiz@email.com",
+      "document": 456789
+    },
+    {
+      "id": 3,
+      "name": "Johana Valencia ",
+      "email": "johana.valencia@email.com",
+      "document": 147258
+    },
+    {
+      "id": 4,
+      "name": "Fernando González ",
+      "email": "fernando.gonzalez@email.com",
+      "document": 236574
+    },
+    {
+      "id": 5,
+      "name": "Alexander Jiménez ",
+      "email": "alexander.jimenez@email.com",
+      "document": 124586,
+      "loanId": 2
+    }
+  ]
+}
