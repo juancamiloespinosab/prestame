@@ -23,8 +23,11 @@
       "dom"
     ],
     "paths": {
+      "@assets/*": ["assets/*"],
+      "@core/*": ["core/*"],
+      "@data/*": ["data/*"],
+      "@environments/*": ["environments/*"],
       "@presentation/*": ["presentation/*"],
-      "@core/*": ["core/*"]
     }
   },
   "angularCompilerOptions": {
