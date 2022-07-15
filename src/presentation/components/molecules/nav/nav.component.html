@@ -1,8 +1,7 @@
 <nav class="nav">
-    <ul class="nav__list">
-        <li class="nav__item">
+    <ul class="nav__list display-flex">
+        <li class="nav__item" *ngFor="let navigationLink of navigationLinks">
             <a-link
-                *ngFor="let navigationLink of navigationLinks"
                 class="nav__link"
                 [routerLink]="navigationLink.routerLink"
                 [routerLinkActive]="navigationLink.routerLinkActiveClassName"

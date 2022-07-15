@@ -5,21 +5,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ComponentsModule } from './components/components.module';
-import { StateModule } from '@state/state.module';
-import { CoreModule } from '@core/core.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        CoreModule,
-        StateModule,
-        ComponentsModule,
-    ],
+    imports: [BrowserModule, BrowserAnimationsModule, CommonModule, HttpClientModule, AppRoutingModule],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

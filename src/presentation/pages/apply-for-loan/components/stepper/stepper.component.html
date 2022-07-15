@@ -1,0 +1,10 @@
+<mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+    <mat-step>
+        <form>
+            <ng-template matStepLabel>Fill out your name</ng-template>
+            <div>
+                <button mat-raised-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+</mat-stepper>

@@ -1,0 +1,13 @@
+<main class="main-layout full-viewport">
+    <header class="main-layout__header">
+        <o-header></o-header>
+    </header>
+    <div class="main-layout__wrapper display-grid full-perecentage">
+        <section class="main-layout__content full-perecentage">
+            <ng-content></ng-content>
+        </section>
+        <aside class="main-layout__aside-content full-perecentage">
+            <m-amount-card [label]="'MONTO BASE'"></m-amount-card>
+        </aside>
+    </div>
+</main>

@@ -39,3 +39,9 @@ export const AMOUNT_CARD_INPUT_DEFAULT_VALUES = {
     LABEL: 'valor',
     AMOUNT: 1000
 };
+
+// ORGANISMS
+
+export const STEPPER_DEFAULT_VALUES = {
+    IS_LINEAR: true,
+};

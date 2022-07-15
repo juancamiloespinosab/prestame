@@ -1,1 +1,113 @@
-/* You can add global styles to this file, and also import other style files */
+@import "styles/_variables.sass"
+@import "styles/reset.sass"
+@import "styles/animations.sass"
+@import "styles/common.sass"
+@import "styles/font.sass"
+
+/* ------------ <PAGES> ----------- */
+/* ------------ </PAGES> ----------- */
+
+/* ------------ <TEMPLATES> ----------- */
+
+/* <MAIN-LAYOUT> */
+
+.main-layout
+
+.main-layout__wrapper
+    max-width: 900px
+    margin: auto
+
+.main-layout__wrapper
+    grid-template-columns: 65% 1fr
+    padding: 100px 0
+
+.main-layout__header
+    position: sticky
+    top: 0
+
+.main-layout__content
+
+.main-layout__aside-content
+
+@media (max-width: 923px)
+    .main-layout__wrapper
+        padding: 100px 16px
+
+/* </MAIN-LAYOUT> */
+
+/* ------------ </TEMPLATES> ----------- */
+
+/* ------------ <ORGANISMS> ----------- */
+
+/* <HEADER> */
+
+.header
+    padding: 20px 0
+    justify-content: space-between
+
+.header__wrapper
+    width: 900px
+    margin: auto
+    justify-content: space-between
+
+.header__title
+
+.header__nav
+    width: 50%
+
+/* </HEADER> */
+
+/* ------------ </ORGANISMS> ----------- */
+
+/* ------------ <MOLECULES> ----------- */
+
+/* <AMOUNT-CARD> */
+.amount-card__wrapper
+    gap: 40px
+
+.amount-card__label
+    justify-self: flex-start
+
+.amount-card__amount
+    justify-self: flex-end
+/* </AMOUNT-CARD> */
+
+/* <NAV> */
+.nav__list
+    justify-content: flex-end
+
+.nav__item
+    margin-left: 10px
+    font-weight: $regular
+
+/* </NAV>
+
+/* <SLIDER-INPUT> */
+
+.slider-input
+    display: inline-block
+    outline: 1px solid gray
+
+.slider-input__container
+    display: flex
+    flex-direction: column
+
+.slider-input__layout
+    position: relative
+
+.slider-input__min-value, .slider-input__max-value
+    position: absolute
+    bottom: 0
+
+.slider-input__min-value
+    left: 0
+
+.slider-input__max-value
+    right: 0
+
+/* </SLIDER-INPUT> */
+
+/* ------------ </MOLECULES> ----------- */
+
+/* ------------ <ATOMS> ----------- */
+/* ------------ </ATOMS> ----------- */

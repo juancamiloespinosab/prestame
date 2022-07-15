@@ -6,6 +6,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
 
 import { IconComponent } from './atoms/icon/icon.component';
 import { LinkComponent } from './atoms/link/link.component';
@@ -17,6 +19,8 @@ import { SliderInputComponent } from './molecules/slider-input/slider-input.comp
 import { NavComponent } from './molecules/nav/nav.component';
 import { AmountCardComponent } from './molecules/amount-card/amount-card.component';
 import { LoanFormComponent } from './molecules/loan-form/loan-form.component';
+import { MainLayoutComponent } from './templates/main-layout/main-layout.component';
+import { HeaderComponent } from './organisms/header/header.component';
 
 @NgModule({
     declarations: [
@@ -30,6 +34,9 @@ import { LoanFormComponent } from './molecules/loan-form/loan-form.component';
         NavComponent,
         AmountCardComponent,
         LoanFormComponent,
+        MainLayoutComponent,
+        HeaderComponent,
+
     ],
     imports: [
         CommonModule,
@@ -37,7 +44,9 @@ import { LoanFormComponent } from './molecules/loan-form/loan-form.component';
         MatInputModule,
         MatButtonModule,
         MatSliderModule,
-        RouterModule
+        MatToolbarModule,
+        MatCardModule,
+        RouterModule,
     ],
     exports: [
         IconComponent,
@@ -48,7 +57,9 @@ import { LoanFormComponent } from './molecules/loan-form/loan-form.component';
         SliderComponent,
         SliderInputComponent,
         NavComponent,
-        AmountCardComponent
+        AmountCardComponent,
+        MainLayoutComponent,
+        HeaderComponent
     ],
 })
 export class ComponentsModule {}

@@ -1,0 +1,14 @@
+<mat-toolbar class="header shadow-bottom" color="primary">
+    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button> -->
+    <div class="header__wrapper display-flex">
+        <a-link
+            class="header__title head-title display-grid center"
+            [routerLink]="'/'"
+            [name]="'PRÉSTAME'"
+            [routerLinkActiveClassName]="''"
+        ></a-link>
+        <m-nav class="header__nav"></m-nav>
+    </div>
+</mat-toolbar>

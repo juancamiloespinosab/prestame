@@ -1,0 +1,29 @@
+.animation__load-from-right
+  animation: load-from-right 2s
+  animation-fill-mode: forwards
+
+@keyframes load-from-right
+  from
+    opacity: 0
+    transform: translateX(20px)
+
+  to
+    opacity: 1
+    transform: translateX(0)
+
+/* <LINK-ACTIVE> */
+
+.nav__link
+  border-bottom: 4px solid transparent
+
+  transition-property: border-bottom
+  transition-duration: .2s
+
+  &--active
+    border-bottom: 4px solid $white
+    font-weight: $semi-bold
+
+  &:hover
+    border-bottom: 4px solid $white
+
+/* </LINK-ACTIVE> */
