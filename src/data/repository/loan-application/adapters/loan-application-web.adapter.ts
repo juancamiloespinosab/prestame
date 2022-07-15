@@ -13,7 +13,6 @@ export class LoanApplicationWebRepositoryAdapter {
             paymentDate: loanApplicationWeb.paymentDate,
             status: loanApplicationWeb.status,
             payed: loanApplicationWeb.payed,
-            userId: loanApplicationWeb.userId,
         };
     }
 
@@ -24,7 +23,6 @@ export class LoanApplicationWebRepositoryAdapter {
             paymentDate: loanApplication.paymentDate,
             status: loanApplication.status,
             payed: loanApplication.payed,
-            userId: loanApplication.userId,
         };
     }
 }

@@ -1,0 +1,19 @@
+<div class="slider-input">
+    <div class="slider-input__container">
+        <mat-label class="slider-input__label">{{
+            value | currency: "COP":"symbol-narrow":"1.0-0"
+        }}</mat-label>
+        <div class="slider-input__layout">
+            <span class="slider-input__min-value">{{
+                minValue | currency: "COP":"symbol-narrow":"1.0-0"
+            }}</span>
+            <a-slider
+                class="slider-input__slider"
+                (OnInputEvent)="onInputSlider($event)"
+            ></a-slider>
+            <span class="slider-input__max-value">{{
+                maxValue | currency: "COP":"symbol-narrow":"1.0-0"
+            }}</span>
+        </div>
+    </div>
+</div>

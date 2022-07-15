@@ -1,0 +1,7 @@
+<div class="amount-card">
+    <a-text class="amount-card__label" [text]="label"></a-text>
+    <a-text
+        class="amount-card__amount"
+        text="{{ amount | currency: 'COP':'symbol-narrow':'1.0-0' }}"
+    ></a-text>
+</div>

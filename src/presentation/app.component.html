@@ -1,2 +1,50 @@
-<p>test</p>
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
+<h1>molecules</h1>
+<ul>
+    <li>
+        <m-slider-input></m-slider-input>
+    </li>
+    <li>
+        <m-nav></m-nav>
+    </li>
+    <li>
+        <m-amount-card></m-amount-card>
+    </li>
+</ul>
+
+<h1>atoms</h1>
+<ul>
+    <li>
+        <h3>icon</h3>
+        <a-icon></a-icon>
+    </li>
+    <li>
+        <h3>link</h3>
+        <a-link></a-link>
+    </li>
+    <li>
+        <h3>button</h3>
+        <a-button
+            (onClickEvent)="test($event)"
+            [label]="'button-'"
+            [color]="'primary'"
+        ></a-button>
+    </li>
+    <li>
+        <h3>text</h3>
+        <a-text [text]="'text-'"></a-text>
+    </li>
+    <li>
+        <h3>input</h3>
+        <a-input [label]="'input-'" [placeholder]="'placeholder-'"></a-input>
+    </li>
+    <li>
+        <h3>slider</h3>
+        <a-slider
+            [color]="'primary'"
+            [minValue]="10000"
+            [maxValue]="100000"
+            [value]="0"
+        ></a-slider>
+    </li>
+</ul>

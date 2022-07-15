@@ -1,0 +1,13 @@
+<nav class="nav">
+    <ul class="nav__list">
+        <li class="nav__item">
+            <a-link
+                *ngFor="let navigationLink of navigationLinks"
+                class="nav__link"
+                [routerLink]="navigationLink.routerLink"
+                [routerLinkActive]="navigationLink.routerLinkActiveClassName"
+                [name]="navigationLink.name"
+            ></a-link>
+        </li>
+    </ul>
+</nav>

@@ -6,5 +6,4 @@ export interface LoanApplicationWeb {
     paymentDate: Date;
     status: LoanStatus;
     payed: boolean;
-    userId: number;
 }

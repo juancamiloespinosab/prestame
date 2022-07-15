@@ -8,6 +8,7 @@ import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from '@core/core.module';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { CoreModule } from '@core/core.module';
         BrowserAnimationsModule,
         HttpClientModule,
         CoreModule,
+        ComponentsModule,
         StoreModule.forRoot({}, {}),
         EffectsModule.forRoot([]),
     ],
