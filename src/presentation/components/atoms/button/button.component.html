@@ -1,1 +1,30 @@
-<button mat-raised-button (click)="onClick()" color="primary">{{ label }}</button>
+<ng-container [ngSwitch]="stepperButton">
+    <button
+        *ngSwitchCase="'none'"
+        mat-raised-button
+        (click)="onClick()"
+        color="primary"
+    >
+        {{ label }}
+    </button>
+
+    <button
+        *ngSwitchCase="'next'"
+        matStepperNext
+        mat-raised-button
+        (click)="onClick()"
+        color="primary"
+    >
+        {{ label }}
+    </button>
+
+    <button
+        *ngSwitchCase="'back'"
+        matStepperPrevious
+        mat-button
+        (click)="onClick()"
+        color="primary"
+    >
+        {{ label }}
+    </button>
+</ng-container>

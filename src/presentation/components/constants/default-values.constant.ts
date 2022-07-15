@@ -13,6 +13,7 @@ export const LINK_DEFAULT_VALUES = {
 export const BUTTON_DEFAULT_VALUES = {
     LABEL: 'button',
     COLOR: 'primary',
+    STEPER_BUTTON: 'none',
 };
 
 export const TEXT_DEFAULT_VALUES = {
@@ -22,6 +23,10 @@ export const TEXT_DEFAULT_VALUES = {
 export const INPUT_DEFAULT_VALUES = {
     LABEL: 'input',
     PLACEHOLDER: 'placeholder',
+};
+
+export const DATEPICKER_DEFAULT_VALUES = {
+    LABEL: 'fecha',
 };
 
 export const SLIDER_DEFAULT_VALUES = {

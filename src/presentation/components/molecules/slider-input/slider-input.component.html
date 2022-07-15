@@ -1,6 +1,6 @@
 <div class="slider-input">
     <div class="slider-input__container">
-        <mat-label class="slider-input__label">{{
+        <mat-label class="slider-input__label title">{{
             value | currency: "COP":"symbol-narrow":"1.0-0"
         }}</mat-label>
         <div class="slider-input__layout">
@@ -9,6 +9,8 @@
             }}</span>
             <a-slider
                 class="slider-input__slider"
+                [minValue]="minValue"
+                [maxValue]="maxValue"
                 (OnInputEvent)="onInputSlider($event)"
             ></a-slider>
             <span class="slider-input__max-value">{{

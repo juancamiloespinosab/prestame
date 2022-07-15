@@ -8,6 +8,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { IconComponent } from './atoms/icon/icon.component';
 import { LinkComponent } from './atoms/link/link.component';
@@ -21,6 +23,8 @@ import { AmountCardComponent } from './molecules/amount-card/amount-card.compone
 import { LoanFormComponent } from './molecules/loan-form/loan-form.component';
 import { MainLayoutComponent } from './templates/main-layout/main-layout.component';
 import { HeaderComponent } from './organisms/header/header.component';
+import { DatepickerComponent } from './atoms/datepicker/datepicker.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
     declarations: [
@@ -36,7 +40,7 @@ import { HeaderComponent } from './organisms/header/header.component';
         LoanFormComponent,
         MainLayoutComponent,
         HeaderComponent,
-
+        DatepickerComponent,
     ],
     imports: [
         CommonModule,
@@ -46,9 +50,13 @@ import { HeaderComponent } from './organisms/header/header.component';
         MatSliderModule,
         MatToolbarModule,
         MatCardModule,
+        MatStepperModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
         RouterModule,
     ],
     exports: [
+        MatStepperModule,
         IconComponent,
         LinkComponent,
         ButtonComponent,
@@ -59,7 +67,8 @@ import { HeaderComponent } from './organisms/header/header.component';
         NavComponent,
         AmountCardComponent,
         MainLayoutComponent,
-        HeaderComponent
+        HeaderComponent,
+        DatepickerComponent
     ],
 })
 export class ComponentsModule {}

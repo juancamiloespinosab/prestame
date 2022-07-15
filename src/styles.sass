@@ -57,6 +57,20 @@
 
 /* </HEADER> */
 
+/* <STEPER> */
+
+.stepper__step-content, .stepper__step-actions
+    width: 70%
+
+.stepper__step-actions
+    justify-content: flex-end
+
+@media (max-width: 923px)
+    .stepper__step-content, .stepper__step-actions
+        width: 90%
+
+/* </STEPER> */
+
 /* ------------ </ORGANISMS> ----------- */
 
 /* ------------ <MOLECULES> ----------- */
@@ -67,6 +81,7 @@
 
 .amount-card__label
     justify-self: flex-start
+    color: $gray
 
 .amount-card__amount
     justify-self: flex-end
@@ -77,8 +92,12 @@
     justify-content: flex-end
 
 .nav__item
-    margin-left: 10px
+    margin-left: 20px
     font-weight: $regular
+
+.nav__link
+    a
+        padding: 0 10px
 
 /* </NAV>
 
@@ -86,7 +105,6 @@
 
 .slider-input
     display: inline-block
-    outline: 1px solid gray
 
 .slider-input__container
     display: flex
@@ -97,7 +115,8 @@
 
 .slider-input__min-value, .slider-input__max-value
     position: absolute
-    bottom: 0
+    color: $gray
+    bottom: -5px
 
 .slider-input__min-value
     left: 0

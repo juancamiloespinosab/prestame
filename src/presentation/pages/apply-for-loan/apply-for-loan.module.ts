@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { MatStepperModule } from '@angular/material/stepper';
-
 import { ApplyForLoanComponent } from './index/apply-for-loan.component';
 import { ComponentsModule } from '@presentation/components/components.module';
 import { StepperComponent } from './components/stepper/stepper.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { StateModule } from '@presentation/state/state.module';
 
 const routes: Routes = [
     {
@@ -20,7 +20,8 @@ const routes: Routes = [
     imports: [
         CommonModule,
         ComponentsModule,
-        MatStepperModule,
+        ReactiveFormsModule,
+        StateModule,
         RouterModule.forChild(routes),
     ],
 })

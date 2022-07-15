@@ -9,6 +9,8 @@ import { BUTTON_DEFAULT_VALUES } from '@presentation/components/constants';
 export class ButtonComponent implements OnInit {
     @Input() label: string = BUTTON_DEFAULT_VALUES.LABEL;
     @Input() color: string = BUTTON_DEFAULT_VALUES.COLOR;
+    @Input() stepperButton: string = BUTTON_DEFAULT_VALUES.STEPER_BUTTON;
+
     @Output() onClickEvent: EventEmitter<boolean> = new EventEmitter();
 
     constructor() {}

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Action, Store } from '@ngrx/store';
 import { SLIDER_INPUT_DEFAULT_VALUES } from '@presentation/components/constants';
+import { AppState } from '@presentation/interfaces';
 
 @Component({
     selector: 'm-slider-input',
@@ -7,16 +9,17 @@ import { SLIDER_INPUT_DEFAULT_VALUES } from '@presentation/components/constants'
     styleUrls: ['./slider-input.component.sass'],
 })
 export class SliderInputComponent implements OnInit {
-    value: number = SLIDER_INPUT_DEFAULT_VALUES.VALUE;
-    minValue: number = SLIDER_INPUT_DEFAULT_VALUES.MIN_VALUE;
-    maxValue: number = SLIDER_INPUT_DEFAULT_VALUES.MAX_VALUE;
+    @Input() value: number = SLIDER_INPUT_DEFAULT_VALUES.VALUE;
+    @Input() minValue: number = SLIDER_INPUT_DEFAULT_VALUES.MIN_VALUE;
+    @Input() maxValue: number = SLIDER_INPUT_DEFAULT_VALUES.MAX_VALUE;
+    @Input() action: any;
 
-    constructor() {}
+    constructor(private store: Store<AppState>) {}
 
-    ngOnInit(): void {
-    }
+    ngOnInit(): void {}
 
     onInputSlider(newValue: number) {
         this.value = newValue;
+        this.store.dispatch(this.action({ payload: newValue }));
     }
 }
