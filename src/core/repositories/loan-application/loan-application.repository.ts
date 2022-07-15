@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LoanApplication, LOAN_STATUS } from '@core/models';
 import { Observable } from 'rxjs';
+
 @Injectable({
     providedIn: 'root',
 })

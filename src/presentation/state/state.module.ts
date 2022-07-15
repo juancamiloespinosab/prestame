@@ -8,18 +8,21 @@ import {
     currentLoanApplicationReducer,
     currentUserReducer,
 } from './reducers';
+import { ApprovedLoansEffects } from '@state/effects';
+import { CoreModule } from '@core/core.module';
 
 @NgModule({
     declarations: [],
     imports: [
         CommonModule,
         StoreModule.forRoot({
-            approvedLoans: approvedLoansReducer,
-            bank: bankReducer,
-            currentLoanApplication: currentLoanApplicationReducer,
-            currentUser: currentUserReducer,
+            'approvedLoans': approvedLoansReducer,
+            'bank': bankReducer,
+            'currentLoanApplication': currentLoanApplicationReducer,
+            'currentUser': currentUserReducer,
         }),
-        EffectsModule.forRoot([]),
+        EffectsModule.forRoot([ApprovedLoansEffects]),
     ],
+    exports: [StoreModule, EffectsModule],
 })
 export class StateModule {}

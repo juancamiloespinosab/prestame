@@ -1,1 +1,1 @@
-export * from './constants/navigation-ink.interface';
+export * from './navigation-ink.interface';

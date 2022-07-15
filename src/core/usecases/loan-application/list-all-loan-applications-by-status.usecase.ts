@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { LoanApplication, LOAN_STATUS } from '@core/models';
-import { LoanApplicationRepository } from '@core/repositories';
+import { LoanApplication, LOAN_STATUS, User } from '@core/models';
 import { Observable } from 'rxjs';
 
-Injectable({
+import { LoanApplicationRepository } from '@core/repositories'
+
+@Injectable({
     providedIn: 'root',
-});
+})
 export class ListAllLoanApplicationsByStatusUsecase {
     constructor(private loanApplicationRepository: LoanApplicationRepository) {}
 

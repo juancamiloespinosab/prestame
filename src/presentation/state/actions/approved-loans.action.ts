@@ -13,6 +13,6 @@ export const listAllLoanApplicationsByStatusAction = createAction(
 );
 
 export const saveAllLoanApplicationsByStatusAction = createAction(
-    ApprovedLoansActionTypes.listAllLoanApplicationsByStatus,
+    ApprovedLoansActionTypes.saveAllLoanApplicationsByStatus,
     props<{ payload: LoanApplication[] }>()
 );

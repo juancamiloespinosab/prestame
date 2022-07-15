@@ -1,22 +1,18 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoanApplication, LOAN_STATUS, User } from '@core/models';
-import { LoanApplicationRepository, UserRepository } from '@core/repositories';
 import { environment } from '@environments/environment';
-import { map, Observable } from 'rxjs';
-import {
-    LoanApplicationWebRepositoryAdapter,
-    UserWebRepositoryAdapter,
-} from '@data/repository';
-import { UserWeb } from '@data/repository';
+import { Observable } from 'rxjs';
+import { LoanApplicationWebRepositoryAdapter } from '@data/repository';
+import { LoanApplicationRepository } from '@core/repositories';
 
 @Injectable({
     providedIn: 'root',
 })
 export class LoanApplicationWebRepository extends LoanApplicationRepository {
     mockLocalApi = environment.mockLocalApi;
-    loanApplicationWebRepositoryAdapter =
-        new LoanApplicationWebRepositoryAdapter();
+    loanApplicationWebRepositoryAdapter = new LoanApplicationWebRepositoryAdapter();
+
     url = `${this.mockLocalApi.baseUrl}/${this.mockLocalApi.paths.loans}`;
 
     constructor(private httpClient: HttpClient) {
