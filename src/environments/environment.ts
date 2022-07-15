@@ -4,7 +4,11 @@
 
 export const environment = {
     production: false,
-    bankBaseAmount: 10000000,
+    bankAmounts: {
+        baseAmount: 10000000,
+        minLoanAmount: 10000,
+        maxLoanAmount: 100000,
+    },
     mockLocalApi: {
         baseUrl: 'http://localhost:3000',
         paths: {
