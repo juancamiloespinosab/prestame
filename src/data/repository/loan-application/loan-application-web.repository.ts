@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LoanApplication, LoanStatus, User } from '@core/models';
+import { LoanApplication, LOAN_STATUS, User } from '@core/models';
 import { LoanApplicationRepository, UserRepository } from '@core/repositories';
 import { environment } from '@environments/environment';
 import { map, Observable } from 'rxjs';
@@ -25,8 +25,8 @@ export class LoanApplicationWebRepository extends LoanApplicationRepository {
 
     createLoanApplication(
         loanApplication: LoanApplication
-    ): Observable<LoanStatus> {
-        return this.httpClient.post<LoanStatus>(this.url, loanApplication);
+    ): Observable<LOAN_STATUS> {
+        return this.httpClient.post<LOAN_STATUS>(this.url, loanApplication);
     }
 
     payLoanApplication(loanApplicationId: number) {
@@ -34,7 +34,7 @@ export class LoanApplicationWebRepository extends LoanApplicationRepository {
     }
 
     listAllLoanApplicationsByStatus(
-        status: LoanStatus
+        status: LOAN_STATUS
     ): Observable<LoanApplication[]> {
         const params = new HttpParams();
         params.append('status', status);

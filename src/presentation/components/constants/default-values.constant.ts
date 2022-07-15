@@ -1,41 +1,41 @@
 // ATOMS
 
-export const iconDefaultValues = {
-    iconName: 'quiz',
+export const ICON_DEFAULT_VALUES = {
+    ICON_NAME: 'quiz',
 };
 
-export const linkDefaultValues = {
-    name: 'link',
-    routerLink: '#',
-    routerLinkActiveClassName: 'nav__link--active',
+export const LINK_DEFAULT_VALUES = {
+    NAME: 'link',
+    ROUTER_LINK: '#',
+    ROUTER_LINK_ACTIVE_CLASS_NAME: 'nav__link--active',
 };
 
-export const buttonDefaultValues = {
-    label: 'button',
-    color: 'primary',
+export const BUTTON_DEFAULT_VALUES = {
+    LABEL: 'button',
+    COLOR: 'primary',
 };
 
-export const textDefaultValues = {
-    text: 'text',
+export const TEXT_DEFAULT_VALUES = {
+    TEXT: 'text',
 };
 
-export const inputDefaultValues = {
-    label: 'input',
-    placeholder: 'placeholder',
+export const INPUT_DEFAULT_VALUES = {
+    LABEL: 'input',
+    PLACEHOLDER: 'placeholder',
 };
 
-export const sliderDefaultValues = {
-    minValue: 0,
-    maxValue: 100,
-    value: 0,
-    color: 'primary',
+export const SLIDER_DEFAULT_VALUES = {
+    MIN_VALUE: 0,
+    MAX_VALUE: 100,
+    VALUE: 0,
+    COLOR: 'primary',
 };
 
 // MOLECULES
 
-export const sliderInputDefaultValues = sliderDefaultValues;
+export const SLIDER_INPUT_DEFAULT_VALUES = SLIDER_DEFAULT_VALUES;
 
-export const amountCardDefaultValues = {
-    label: 'valor',
-    amount: 1000
+export const AMOUNT_CARD_INPUT_DEFAULT_VALUES = {
+    LABEL: 'valor',
+    AMOUNT: 1000
 };

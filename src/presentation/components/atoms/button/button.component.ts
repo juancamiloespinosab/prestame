@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { buttonDefaultValues } from '@presentation/components/constants';
+import { BUTTON_DEFAULT_VALUES } from '@presentation/components/constants';
 
 @Component({
     selector: 'a-button',
@@ -7,8 +7,8 @@ import { buttonDefaultValues } from '@presentation/components/constants';
     styleUrls: ['./button.component.sass'],
 })
 export class ButtonComponent implements OnInit {
-    @Input() label: string = buttonDefaultValues.label;
-    @Input() color: string = buttonDefaultValues.color;
+    @Input() label: string = BUTTON_DEFAULT_VALUES.LABEL;
+    @Input() color: string = BUTTON_DEFAULT_VALUES.COLOR;
     @Output() onClickEvent: EventEmitter<boolean> = new EventEmitter();
 
     constructor() {}

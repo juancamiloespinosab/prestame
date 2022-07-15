@@ -20,7 +20,7 @@ export class LoanApplicationWebRepositoryAdapter {
         return {
             id: loanApplication.id,
             amount: loanApplication.amount,
-            paymentDate: loanApplication.paymentDate,
+            paymentDate: loanApplication.paymentDate?? '',
             status: loanApplication.status,
             payed: loanApplication.payed,
         };

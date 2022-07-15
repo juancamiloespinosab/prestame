@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { iconDefaultValues } from '@presentation/components/constants';
+import { ICON_DEFAULT_VALUES } from '@presentation/components/constants';
 
 @Component({
     selector: 'a-icon',
@@ -7,7 +7,7 @@ import { iconDefaultValues } from '@presentation/components/constants';
     styleUrls: ['./icon.component.sass'],
 })
 export class IconComponent implements OnInit {
-    @Input() iconName: string = iconDefaultValues.iconName;
+    @Input() iconName: string = ICON_DEFAULT_VALUES.ICON_NAME;
 
     constructor() {}
 

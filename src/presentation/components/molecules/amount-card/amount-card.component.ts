@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { amountCardDefaultValues } from '@presentation/components/constants';
+import { AMOUNT_CARD_INPUT_DEFAULT_VALUES } from '@presentation/components/constants';
 
 @Component({
     selector: 'm-amount-card',
@@ -7,8 +7,8 @@ import { amountCardDefaultValues } from '@presentation/components/constants';
     styleUrls: ['./amount-card.component.sass'],
 })
 export class AmountCardComponent implements OnInit {
-    @Input() label: string = amountCardDefaultValues.label;
-    @Input() amount: number = amountCardDefaultValues.amount;
+    @Input() label: string = AMOUNT_CARD_INPUT_DEFAULT_VALUES.LABEL;
+    @Input() amount: number = AMOUNT_CARD_INPUT_DEFAULT_VALUES.AMOUNT;
 
     constructor() {}
 

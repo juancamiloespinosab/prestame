@@ -1,9 +1,9 @@
-import { LoanStatus } from '@core/models';
+import { LOAN_STATUS } from '@core/models';
 
 export interface LoanApplicationWeb {
     id: number;
     amount: number;
-    paymentDate: Date;
-    status: LoanStatus;
+    paymentDate: Date | string;
+    status: LOAN_STATUS;
     payed: boolean;
 }

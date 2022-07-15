@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { LoanApplication, LoanStatus } from '@core/models';
+import { LoanApplication, LOAN_STATUS } from '@core/models';
 import { LoanApplicationRepository, UserRepository } from '@core/repositories';
 import { Observable } from 'rxjs';
 
@@ -11,7 +11,7 @@ export class createLoanApplicationUsecase {
 
   constructor(private loanApplicationRepository: LoanApplicationRepository) { }
 
-  execute(loanApplication: LoanApplication): Observable<LoanStatus> {
+  execute(loanApplication: LoanApplication): Observable<LOAN_STATUS> {
     return this.loanApplicationRepository.createLoanApplication(loanApplication);
   }
 }

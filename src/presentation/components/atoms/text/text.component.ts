@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { textDefaultValues } from '@presentation/components/constants';
+import { TEXT_DEFAULT_VALUES } from '@presentation/components/constants';
 
 @Component({
     selector: 'a-text',
@@ -7,7 +7,7 @@ import { textDefaultValues } from '@presentation/components/constants';
     styleUrls: ['./text.component.sass'],
 })
 export class TextComponent implements OnInit {
-    @Input() text: string = textDefaultValues.text;
+    @Input() text: string = TEXT_DEFAULT_VALUES.TEXT;
 
     constructor() {}
 
