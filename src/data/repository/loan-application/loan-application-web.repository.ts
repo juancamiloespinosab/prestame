@@ -21,8 +21,8 @@ export class LoanApplicationWebRepository extends LoanApplicationRepository {
 
     createLoanApplication(
         loanApplication: LoanApplication
-    ): Observable<LOAN_STATUS> {
-        return this.httpClient.post<LOAN_STATUS>(this.url, loanApplication);
+    ): Observable<LoanApplication> {
+        return this.httpClient.post<LoanApplication>(this.url, loanApplication);
     }
 
     payLoanApplication(loanApplicationId: number) {

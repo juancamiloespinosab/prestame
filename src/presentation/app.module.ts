@@ -7,10 +7,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { CoreModule } from '@core/core.module';
 
 @NgModule({
     declarations: [AppComponent],
     imports: [
+        CoreModule,
         BrowserModule,
         BrowserAnimationsModule,
         CommonModule,

@@ -62,6 +62,9 @@
 .stepper__step-content, .stepper__step-actions
     width: 70%
 
+.stepper__step-content
+    gap: 10px
+
 .stepper__step-actions
     justify-content: flex-end
 
@@ -124,9 +127,46 @@
 .slider-input__max-value
     right: 0
 
+/* <RESPONSE> */
+
+.response
+    align-items: center
+
+.response__icon
+    justify-content: start
+    width: 50px
+    &--pending
+        mat-icon
+            color: $primary
+            animation: rotate 1s linear infinite
+            animation-fill-mode: forwards
+    &--approved
+        mat-icon
+            color: $green   
+    &--rejected
+        mat-icon
+        color: $red
+    mat-icon
+        font-size: 42px
+
+.response__text
+    &--pending
+        color: $primary
+    &--approved
+        color: $green
+    &--rejected
+        color: $red
+
+/* </RESPONSE> */
+
 /* </SLIDER-INPUT> */
 
 /* ------------ </MOLECULES> ----------- */
 
 /* ------------ <ATOMS> ----------- */
+
+/* <ICON> */
+
+/* </ICON> */
+
 /* ------------ </ATOMS> ----------- */

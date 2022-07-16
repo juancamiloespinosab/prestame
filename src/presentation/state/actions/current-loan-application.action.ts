@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 
-import { LoanApplication } from '@core/models';
+import { LoanApplication, LOAN_STATUS } from '@core/models';
 
 export enum CurrentLoanApplicationActionTypes {
     saveCurrentLoanApplication = '[Current Loan Application] Save Current Loan Application',
@@ -9,6 +9,7 @@ export enum CurrentLoanApplicationActionTypes {
 
     updateCurrentLoanApplicationAmount = '[Current Loan Application] Update Current Loan Application Amount',
     updateCurrentLoanApplicationPaymentDate = '[Current Loan Application] Update Current Loan Application Payment Date',
+    updateCurrentLoanApplicationStatus = '[Current Loan Application] Update Current Loan Application Status',
 }
 
 export const saveCurrentLoanApplicationAction = createAction(
@@ -33,4 +34,9 @@ export const updateurrentLoanApplicationAmountAction = createAction(
 export const updateCurrentLoanApplicationPaymentDateAction = createAction(
     CurrentLoanApplicationActionTypes.updateCurrentLoanApplicationPaymentDate,
     props<{ payload: Date | string }>()
+);
+
+export const updateCurrentLoanApplicationStatusAction = createAction(
+    CurrentLoanApplicationActionTypes.updateCurrentLoanApplicationStatus,
+    props<{ payload: LOAN_STATUS }>()
 );

@@ -8,32 +8,284 @@
       "payed": false
     },
     {
-      "amount": 50000,
-      "paymentDate": "Wed Jul 13 2022",
-      "status": "approved",
-      "payed": true,
-      "id": 2
+      "id": 2,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
     },
     {
       "id": 3,
-      "amount": 80000,
-      "paymentDate": "Wed Jul 12 2022",
-      "status": "rejected",
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
       "payed": false
     },
     {
       "id": 4,
-      "amount": 75000,
-      "paymentDate": "Wed Jul 10 2022",
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 5,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 6,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 7,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 8,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 9,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 10,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 11,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 12,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 13,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 14,
+      "amount": 10000,
+      "paymentDate": "",
       "status": "approved",
       "payed": false
     },
     {
-      "amount": 100,
-      "paymentDate": "Wed Jul 13 2022",
+      "id": 15,
+      "amount": 10000,
+      "paymentDate": "",
       "status": "approved",
-      "payed": false,
-      "id": 5
+      "payed": false
+    },
+    {
+      "id": 16,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "approved",
+      "payed": false
+    },
+    {
+      "id": 17,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 18,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 19,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "rejected",
+      "payed": false
+    },
+    {
+      "id": 20,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "rejected",
+      "payed": false
+    },
+    {
+      "id": 21,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "rejected",
+      "payed": false
+    },
+    {
+      "id": 22,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 23,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "rejected",
+      "payed": false
+    },
+    {
+      "id": 24,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "approved",
+      "payed": false
+    },
+    {
+      "id": 25,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "rejected",
+      "payed": false
+    },
+    {
+      "id": 26,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "approved",
+      "payed": false
+    },
+    {
+      "id": 27,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 28,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 29,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 30,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 31,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 32,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 33,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 34,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 35,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 36,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 37,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 38,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 39,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 40,
+      "amount": 10000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
+    },
+    {
+      "id": 41,
+      "amount": 60000,
+      "paymentDate": "",
+      "status": "pending",
+      "payed": false
     }
   ],
   "users": [
@@ -43,38 +295,6 @@
       "email": "jose.lopez@email.com",
       "document": 123456,
       "loanId": 1
-    },
-    {
-      "id": 2,
-      "name": "Camila Ortiz",
-      "email": "camila.ortiz@email.com",
-      "document": 456789
-    },
-    {
-      "id": 3,
-      "name": "Johana Valencia ",
-      "email": "johana.valencia@email.com",
-      "document": 147258
-    },
-    {
-      "id": 4,
-      "name": "Fernando González ",
-      "email": "fernando.gonzalez@email.com",
-      "document": 236574
-    },
-    {
-      "id": 5,
-      "name": "Alexander Jiménez ",
-      "email": "alexander.jimenez@email.com",
-      "document": 124586,
-      "loanId": 2
-    },
-    {
-      "id": 6,
-      "name": "Juanito",
-      "email": "juan.test@email.com",
-      "document": 1106899,
-      "loanApplicationId": 2
     }
   ]
 }

@@ -1,0 +1,12 @@
+<div class="response display-flex">
+    <a-icon
+        [ngClass]="'response__icon--' + currentResponseValue.status"
+        class="response__icon full-perecentge display-grid"
+        [iconName]="currentResponseValue.icon"
+    ></a-icon>
+    <a-text
+        [ngClass]="'response__text--' + currentResponseValue.status"
+        class="response__text sub-title color"
+        [text]="currentResponseValue.text"
+    ></a-text>
+</div>

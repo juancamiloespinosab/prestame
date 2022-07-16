@@ -10,8 +10,6 @@ export class CreateUserUsecase {
     constructor(private userRepository: UserRepository) {}
 
     execute(user: User): Observable<any> {
-        console.log(2);
-
         return this.userRepository.createUser(user);
     }
 }

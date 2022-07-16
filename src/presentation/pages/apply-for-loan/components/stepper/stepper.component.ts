@@ -1,12 +1,18 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Bank, LoanApplication } from '@core/models';
+import { Bank, LoanApplication, LOAN_STATUS, User } from '@core/models';
 import { Store } from '@ngrx/store';
 import { STEPPER_DEFAULT_VALUES } from '@presentation/components/constants';
 import { AppState, Step } from '@presentation/interfaces';
 import { UtilService } from '@presentation/services/util.service';
 import {
+    createCurrentLoanApplicationAction,
+    resetCurrentLoanApplicationAction,
     updateCurrentLoanApplicationPaymentDateAction,
+    updateCurrentLoanApplicationStatusAction,
+    updateCurrentUserDocumentAction,
+    updateCurrentUserEmailAction,
+    updateCurrentUserNameAction,
     updateurrentLoanApplicationAmountAction,
 } from '@presentation/state/actions';
 import { Observable, Subscription } from 'rxjs';
@@ -27,6 +33,10 @@ export class StepperComponent implements OnInit, OnDestroy {
     currentLoanAppplicationState$: Observable<LoanApplication>;
     currentLoanAppplicationState: LoanApplication;
 
+    currentUserSubscription: Subscription;
+    currentUserState$: Observable<User>;
+    currentUserState: User;
+
     loanApplicationSteps: Step[] = [
         {
             number: 1,
@@ -34,6 +44,7 @@ export class StepperComponent implements OnInit, OnDestroy {
             showBackButton: false,
             backButtonLabel: 'REGRESAR',
             nextButtonLabel: 'CONTINUAR',
+            formGroup: new FormGroup({}),
             items: [
                 {
                     name: 'amount',
@@ -55,21 +66,46 @@ export class StepperComponent implements OnInit, OnDestroy {
             showBackButton: true,
             backButtonLabel: 'REGRESAR',
             nextButtonLabel: 'CONTINUAR',
+            nextButtonAction: createCurrentLoanApplicationAction,
+            formGroup: new FormGroup({}),
             items: [
                 {
                     name: 'name',
-                    label: 'Nombre*',
+                    label: 'Nombre',
                     type: 'input',
+                    action: updateCurrentUserNameAction,
+                    requiered: true,
                 },
                 {
-                    name: 'name',
-                    label: 'Correo*',
+                    name: 'email',
+                    label: 'Correo',
                     type: 'input',
+                    action: updateCurrentUserEmailAction,
+                    requiered: true,
+                    // validators: [Validators.email],
                 },
                 {
-                    name: 'name',
-                    label: 'Cédula*',
+                    name: 'document',
+                    label: 'Cédula',
                     type: 'input',
+                    action: updateCurrentUserDocumentAction,
+                    requiered: true,
+                    // validators: [Validators.pattern(/^([0-9])*$/)],
+                },
+            ],
+        },
+        {
+            number: 3,
+            name: 'Respuesta',
+            hideButtons: true,
+            showBackButton: false,
+            backButtonLabel: 'REGRESAR',
+            nextButtonLabel: 'CONTINUAR',
+            items: [
+                {
+                    name: 'name',
+                    label: 'Nombre',
+                    type: 'response',
                 },
             ],
         },
@@ -90,6 +126,7 @@ export class StepperComponent implements OnInit, OnDestroy {
         this.currentLoanAppplicationState$ = this.store.select(
             'currentLoanApplication'
         );
+        this.currentUserState$ = this.store.select('currentUser');
     }
 
     subscribeToStates() {
@@ -99,16 +136,24 @@ export class StepperComponent implements OnInit, OnDestroy {
 
         this.currentLoanAppplicationSubscription =
             this.currentLoanAppplicationState$.subscribe((data) => {
-                this.currentLoanAppplicationState = data;
+                this.currentLoanAppplicationState = data;                
             });
+
+        this.currentUserSubscription = this.currentUserState$.subscribe(
+            (data) => {
+                this.currentUserState = data;
+            }
+        );
     }
 
-    test(event: any) {
-        console.log('actual state -->', this.currentLoanAppplicationState);
+    dispatchCreateAction(action: any, payload: any) {
+        this.store.dispatch(updateCurrentLoanApplicationStatusAction({ payload: LOAN_STATUS.PENDING }));
+        this.store.dispatch(action({ payload }));
     }
 
     ngOnDestroy() {
         this.bankStateSubscription.unsubscribe();
         this.currentLoanAppplicationSubscription.unsubscribe();
+        this.currentUserSubscription.unsubscribe();
     }
 }

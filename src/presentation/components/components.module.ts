@@ -25,6 +25,8 @@ import { MainLayoutComponent } from './templates/main-layout/main-layout.compone
 import { HeaderComponent } from './organisms/header/header.component';
 import { DatepickerComponent } from './atoms/datepicker/datepicker.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CoreModule } from '@core/core.module';
 
 @NgModule({
     declarations: [
@@ -43,6 +45,7 @@ import { MatNativeDateModule } from '@angular/material/core';
         DatepickerComponent,
     ],
     imports: [
+        CoreModule,
         CommonModule,
         MatIconModule,
         MatInputModule,
@@ -53,6 +56,7 @@ import { MatNativeDateModule } from '@angular/material/core';
         MatStepperModule,
         MatDatepickerModule,
         MatNativeDateModule,
+        ReactiveFormsModule,
         RouterModule,
     ],
     exports: [

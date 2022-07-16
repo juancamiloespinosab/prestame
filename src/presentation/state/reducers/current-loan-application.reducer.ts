@@ -16,10 +16,12 @@ export const currentLoanApplicationInitialState: LoanApplication = {
 
 export const currentLoanApplicationReducer = createReducer(
     currentLoanApplicationInitialState,
-    on(
-        actions.saveCurrentLoanApplicationAction,
-        (state, { payload }) => payload
-    ),
+    on(actions.saveCurrentLoanApplicationAction, (state, { payload }) => {
+        return {
+            ...state,
+            status: payload.status,
+        };
+    }),
     on(
         actions.updateurrentLoanApplicationAmountAction,
         (state, { payload }) => {
@@ -41,5 +43,14 @@ export const currentLoanApplicationReducer = createReducer(
     on(
         actions.resetCurrentLoanApplicationAction,
         () => currentLoanApplicationInitialState
+    ),
+    on(
+        actions.updateCurrentLoanApplicationStatusAction,
+        (state, { payload }) => {
+            return {
+                ...state,
+                status: payload,
+            };
+        }
     )
 );

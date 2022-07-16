@@ -1,19 +1,22 @@
 <mat-stepper
+    #stepper
     class="stepper"
     orientation="vertical"
     [linear]="isLinear"
-    #stepper
 >
     <mat-step *ngFor="let step of loanApplicationSteps">
         <ng-template matStepLabel>{{ step.name }}</ng-template>
 
-        <div class="stepper__step-content">
+        <div class="stepper__step-content display-grid">
             <ng-container
                 *ngTemplateOutlet="stepsTemplate; context: step"
             ></ng-container>
         </div>
 
-        <div class="stepper__step-actions display-flex">
+        <div
+            *ngIf="!step.hideButtons"
+            class="stepper__step-actions display-flex"
+        >
             <a-button
                 *ngIf="step.showBackButton"
                 [stepperButton]="'back'"
@@ -22,51 +25,45 @@
             <a-button
                 [stepperButton]="'next'"
                 [label]="step.nextButtonLabel"
-                (click)="test(step)"
+                (click)="
+                    dispatchCreateAction(
+                        step.nextButtonAction,
+                        currentLoanAppplicationState
+                    )
+                "
+                [disabled]="step.formGroup?.invalid || false"
             ></a-button>
         </div>
     </mat-step>
 </mat-stepper>
 
-<ng-template #stepsTemplate let-number="number" let-items="items">
+<ng-template
+    #stepsTemplate
+    let-number="number"
+    let-items="items"
+    let-formGroup="formGroup"
+>
     <ng-container [ngSwitch]="number">
         <ng-container *ngFor="let item of items">
             <ng-container
-                *ngTemplateOutlet="itemsTemplate; context: item"
+                *ngTemplateOutlet="
+                    itemsTemplate;
+                    context: { item: item, formGroup: formGroup }
+                "
             ></ng-container>
         </ng-container>
-        <!-- <form class="stepper__step-form display-grid" *ngSwitchCase="1">
-            <a-datepicker
-                class="display-grid"
-                [label]="'Fecha de pago (Opcional)'"
-            ></a-datepicker>
-        </form> -->
-        <!-- <form class="stepper__step-form display-grid" *ngSwitchCase="2">
-            <a-input
-                class="display-grid"
-                [label]="'Nombre'"
-                [placeholder]="''"
-            ></a-input>
-            <a-input
-                class="display-grid"
-                [label]="'Correo'"
-                [placeholder]="''"
-            ></a-input>
-            <a-input
-                class="display-grid"
-                [label]="'Cédula'"
-                [placeholder]="''"
-            ></a-input>
-        </form> -->
     </ng-container>
 </ng-template>
 
 <ng-template
     #itemsTemplate
-    let-name="name"
-    let-type="type"
-    let-action="action"
-    let-label="label"
+    let-name="item.name"
+    let-type="item.type"
+    let-action="item.action"
+    let-label="item.label"
+    let-requiered="item.requiered"
+    let-validators="item.validators"
+    let-formGroup="formGroup"
 >
     <ng-container [ngSwitch]="type">
         <m-slider-input
@@ -86,8 +83,17 @@
         <a-input
             *ngSwitchCase="'input'"
             class="display-grid"
+            [name]="name"
             [label]="label"
             [placeholder]="''"
+            [action]="action"
+            [requiered]="requiered"
+            [validators]="validators"
+            [formGroup]="formGroup"
         ></a-input>
+        <app-response
+            *ngSwitchCase="'response'"
+            [currentLoanStatus]="currentLoanAppplicationState.status"
+        ></app-response>
     </ng-container>
 </ng-template>

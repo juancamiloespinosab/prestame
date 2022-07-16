@@ -8,8 +8,10 @@ import { Observable } from 'rxjs';
 export abstract class LoanApplicationRepository {
     abstract createLoanApplication(
         loanApplication: LoanApplication
-    ): Observable<LOAN_STATUS>;
+    ): Observable<LoanApplication>;
+
     abstract payLoanApplication(loanApplicationId: number): Observable<any>;
+
     abstract listAllLoanApplicationsByStatus(
         status: LOAN_STATUS
     ): Observable<LoanApplication[]>;

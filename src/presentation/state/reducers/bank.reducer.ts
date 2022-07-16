@@ -20,7 +20,7 @@ export const bankReducer = createReducer(
             baseAmount: state.baseAmount + payload,
         };
     }),
-    on(actions.withdrawAmountAction, (state, { payload }) => {
+    on(actions.withdrawAmountAction, (state, { payload }) => {  
         return {
             ...state,
             baseAmount: state.baseAmount - payload,
