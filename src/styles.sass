@@ -24,8 +24,7 @@
 .main-layout__header
     position: sticky
     top: 0
-
-.main-layout__content
+    z-index: 100
 
 .main-layout__aside-content
 
@@ -39,6 +38,13 @@
         padding: 50px 36px
     .main-layout__aside-content
         grid-row: 1
+
+@media (max-width: $responsive-small)
+    .main-layout__wrapper
+        grid-template-columns: 1fr
+        padding: 10px 36px
+    .main-layout__content, .main-layout__aside-content
+        width: 90%
 
 /* </MAIN-LAYOUT> */
 
@@ -79,6 +85,10 @@
     .stepper__step-content, .stepper__step-actions
         width: 100%
 
+@media (max-width: $responsive-small)
+    .stepper__step-content, .stepper__step-actions
+        width: 90%
+
 /* </STEPER> */
 
 /* ------------ </ORGANISMS> ----------- */
@@ -95,6 +105,11 @@
 
 .amount-card__amount
     justify-self: flex-end
+
+@media (max-width: $responsive-small)
+    .amount-card 
+        width: 90%
+
 /* </AMOUNT-CARD> */
 
 /* <NAV> */
@@ -180,7 +195,7 @@
             animation-fill-mode: forwards
     &--approved
         mat-icon
-        color: $green
+            color: $green
     &--rejected
         mat-icon
             color: $red
