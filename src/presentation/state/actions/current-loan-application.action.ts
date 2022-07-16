@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 
-import { LoanApplication, LOAN_STATUS } from '@core/models';
+import { LoanApplication, LOAN_STATUS, User } from '@core/models';
 
 export enum CurrentLoanApplicationActionTypes {
     saveCurrentLoanApplication = '[Current Loan Application] Save Current Loan Application',
@@ -19,7 +19,12 @@ export const saveCurrentLoanApplicationAction = createAction(
 
 export const createCurrentLoanApplicationAction = createAction(
     CurrentLoanApplicationActionTypes.createCurrentLoanApplication,
-    props<{ payload: LoanApplication }>()
+    props<{
+        payload: {
+            loanApplication: LoanApplication;
+            user: User;
+        };
+    }>()
 );
 
 export const resetCurrentLoanApplicationAction = createAction(

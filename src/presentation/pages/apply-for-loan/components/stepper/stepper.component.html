@@ -19,18 +19,13 @@
         >
             <a-button
                 *ngIf="step.showBackButton"
-                [stepperButton]="'back'"
+                [type]="'back'"
                 [label]="step.backButtonLabel"
             ></a-button>
             <a-button
-                [stepperButton]="'next'"
+                [type]="'next'"
                 [label]="step.nextButtonLabel"
-                (click)="
-                    dispatchCreateAction(
-                        step.nextButtonAction,
-                        currentLoanAppplicationState
-                    )
-                "
+                (click)="step.isSubmit ? dispatchCreateAction() : null"
                 [disabled]="step.formGroup?.invalid || false"
             ></a-button>
         </div>

@@ -7,7 +7,7 @@ export interface Step {
     showBackButton: boolean;
     backButtonLabel: string;
     nextButtonLabel: string;
+    isSubmit?: boolean;
     items?: any[];
     formGroup?: FormGroup;
-    nextButtonAction?: any;
 }

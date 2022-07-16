@@ -4,9 +4,14 @@
             <a-link
                 class="nav__link"
                 [routerLink]="navigationLink.routerLink"
-                [routerLinkActiveClassName]="navigationLink.routerLinkActiveClassName"
+                [routerLinkActiveClassName]="
+                    navigationLink.routerLinkActiveClassName
+                "
                 [name]="navigationLink.name"
             ></a-link>
         </li>
     </ul>
 </nav>
+<a-button class="nav-mobile-menu" [type]="'icon'">
+    <a-icon [iconName]="'menu'"></a-icon>
+</a-button>

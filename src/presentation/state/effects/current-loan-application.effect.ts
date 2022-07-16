@@ -3,6 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
     debounceTime,
     map,
+    merge,
     mergeMap,
     Observable,
     Subscription,
@@ -11,40 +12,57 @@ import {
 
 import {
     ApprovedLoansActionTypes,
+    createCurrentUserAction,
     CurrentLoanApplicationActionTypes,
     resetCurrentLoanApplicationAction,
     saveCurrentLoanApplicationAction,
     withdrawAmountAction,
 } from '@state/actions';
-import { LoanApplication, LOAN_STATUS } from '@core/models';
-import { CreateLoanApplicationUsecase } from '@core/usecases';
+import { LoanApplication, LOAN_STATUS, User } from '@core/models';
+import {
+    CreateLoanApplicationUsecase,
+    CreateUserUsecase,
+} from '@core/usecases';
 import { AppState } from '@presentation/interfaces';
 import { Store } from '@ngrx/store';
 import { UtilService } from '@presentation/services/util.service';
 
 @Injectable()
 export class CurrentLoanApplicationEffects {
+    currentUser: User;
+    currentLoanApplication: LoanApplication;
+
     currentLoanApplication$ = createEffect(() => {
         return this.actions$.pipe(
             ofType(
                 CurrentLoanApplicationActionTypes.createCurrentLoanApplication
             ),
             debounceTime(2000),
-            mergeMap((payload: { payload: LoanApplication }) => {                
-                return this.createLoanApplicationUsecase
-                    .execute(payload.payload)
+            mergeMap(
+                (payload: {
+                    payload: { loanApplication: LoanApplication; user: User };
+                }) => {
+                    this.currentUser = payload.payload.user;
+                    this.currentLoanApplication =
+                        payload.payload.loanApplication;
+
+                    return this.createLoanApplicationUsecase.execute(
+                        payload.payload.loanApplication
+                    );
+                }
+            ),
+            mergeMap((payload: LoanApplication) => {
+                return this.createUserUsecase
+                    .execute({
+                        ...this.currentUser,
+                        loanApplicationId: payload.id,
+                    })
                     .pipe(
                         map((payload: LoanApplication) => {
-                            const newPayload = { ...payload };
-                            newPayload.status =
-                                this.utilService.getRandomLoanStatus();
-                            return newPayload;
-                        }),
-                        map((payload: LoanApplication) =>
-                            saveCurrentLoanApplicationAction({
-                                payload,
-                            })
-                        )
+                            return saveCurrentLoanApplicationAction({
+                                payload: this.currentLoanApplication,
+                            });
+                        })
                     );
             })
         );
@@ -55,9 +73,13 @@ export class CurrentLoanApplicationEffects {
             ofType(
                 CurrentLoanApplicationActionTypes.saveCurrentLoanApplication
             ),
-            map((payload: { payload: LoanApplication }) => {
+            map((payload: LoanApplication) => {
                 return withdrawAmountAction({
-                    payload: payload.payload.amount,
+                    payload:
+                        this.currentLoanApplication.status ==
+                        LOAN_STATUS.APPROVED
+                            ? this.currentLoanApplication.amount
+                            : 0,
                 });
             })
         );
@@ -66,6 +88,6 @@ export class CurrentLoanApplicationEffects {
     constructor(
         private actions$: Actions,
         private createLoanApplicationUsecase: CreateLoanApplicationUsecase,
-        private utilService: UtilService
+        private createUserUsecase: CreateUserUsecase
     ) {}
 }

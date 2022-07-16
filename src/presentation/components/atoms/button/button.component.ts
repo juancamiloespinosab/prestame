@@ -9,7 +9,7 @@ import { BUTTON_DEFAULT_VALUES } from '@presentation/components/constants';
 export class ButtonComponent implements OnInit {
     @Input() label: string = BUTTON_DEFAULT_VALUES.LABEL;
     @Input() color: string = BUTTON_DEFAULT_VALUES.COLOR;
-    @Input() stepperButton: string = BUTTON_DEFAULT_VALUES.STEPER_BUTTON;
+    @Input() type: string = BUTTON_DEFAULT_VALUES.TYPE;
     @Input() disabled: boolean = BUTTON_DEFAULT_VALUES.DISABLED;
 
     @Output() onClickEvent: EventEmitter<boolean> = new EventEmitter();

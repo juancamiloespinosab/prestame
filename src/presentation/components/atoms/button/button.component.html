@@ -1,11 +1,20 @@
-<ng-container [ngSwitch]="stepperButton">
+<ng-container [ngSwitch]="type">
     <button
-        *ngSwitchCase="'none'"
+        *ngSwitchCase="'normal'"
         mat-raised-button
         (click)="onClick()"
         color="primary"
     >
         {{ label }}
+    </button>
+    <button
+        *ngSwitchCase="'icon'"
+        mat-icon-button
+        class="button--icon display-grid center"
+        mat-button
+        (click)="onClick()"
+    >
+        <ng-content></ng-content>
     </button>
 
     <button

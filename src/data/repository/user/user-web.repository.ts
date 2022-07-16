@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { User } from '@core/models';
 import { UserRepository } from '@core/repositories';
 import { environment } from '@environments/environment';
-import { map } from 'rxjs';
+import { tap } from 'rxjs';
 import { UserWebRepositoryAdapter } from '@data/repository';
 import { UserWeb } from '@data/repository';
 
@@ -22,7 +22,6 @@ export class UserWebRepository extends UserRepository {
         const url = `${this.mockLocalApi.baseUrl}/${this.mockLocalApi.paths.users}`;
 
         return this.httpClient
-            .post<User>(url, user)
-            .pipe(map(this.userWebRepositoryAdapter.mapTo));
+            .post<User>(url, this.userWebRepositoryAdapter.mapTo(user))
     }
 }

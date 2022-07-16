@@ -29,9 +29,16 @@
 
 .main-layout__aside-content
 
-@media (max-width: 923px)
+@media (max-width: $responsive-tablet)
     .main-layout__wrapper
-        padding: 100px 16px
+        padding: 80px 16px
+
+@media (max-width: $responsive-mobile)
+    .main-layout__wrapper
+        grid-template-columns: 1fr
+        padding: 50px 36px
+    .main-layout__aside-content
+        grid-row: 1
 
 /* </MAIN-LAYOUT> */
 
@@ -68,9 +75,9 @@
 .stepper__step-actions
     justify-content: flex-end
 
-@media (max-width: 923px)
+@media (max-width: $responsive-mobile)
     .stepper__step-content, .stepper__step-actions
-        width: 90%
+        width: 100%
 
 /* </STEPER> */
 
@@ -101,6 +108,21 @@
 .nav__link
     a
         padding: 0 10px
+
+.nav-mobile-menu
+    display: none
+
+.nav-mobile
+    height: 100vh
+    top: 0
+    position: absolute
+
+@media (max-width: $responsive-mobile)
+    .nav-mobile-menu
+        display: flex
+        justify-content: flex-end
+    .nav
+        display: none
 
 /* </NAV>
 
@@ -142,10 +164,10 @@
             animation-fill-mode: forwards
     &--approved
         mat-icon
-            color: $green   
+        color: $green
     &--rejected
         mat-icon
-        color: $red
+            color: $red
     mat-icon
         font-size: 42px
 
@@ -165,8 +187,15 @@
 
 /* ------------ <ATOMS> ----------- */
 
-/* <ICON> */
+/* <BUTTON> */
 
-/* </ICON> */
+.button--icon
+    padding: 0
+    mat-icon
+        display: flex
+        font-size: 42px
+        align-items: center
+
+/* </BUTTON> */
 
 /* ------------ </ATOMS> ----------- */

@@ -66,7 +66,7 @@ export class StepperComponent implements OnInit, OnDestroy {
             showBackButton: true,
             backButtonLabel: 'REGRESAR',
             nextButtonLabel: 'CONTINUAR',
-            nextButtonAction: createCurrentLoanApplicationAction,
+            isSubmit: true,
             formGroup: new FormGroup({}),
             items: [
                 {
@@ -82,7 +82,7 @@ export class StepperComponent implements OnInit, OnDestroy {
                     type: 'input',
                     action: updateCurrentUserEmailAction,
                     requiered: true,
-                    // validators: [Validators.email],
+                    validators: [Validators.email],
                 },
                 {
                     name: 'document',
@@ -90,7 +90,7 @@ export class StepperComponent implements OnInit, OnDestroy {
                     type: 'input',
                     action: updateCurrentUserDocumentAction,
                     requiered: true,
-                    // validators: [Validators.pattern(/^([0-9])*$/)],
+                    validators: [Validators.pattern(/^([0-9])*$/)],
                 },
             ],
         },
@@ -136,7 +136,7 @@ export class StepperComponent implements OnInit, OnDestroy {
 
         this.currentLoanAppplicationSubscription =
             this.currentLoanAppplicationState$.subscribe((data) => {
-                this.currentLoanAppplicationState = data;                
+                this.currentLoanAppplicationState = data;
             });
 
         this.currentUserSubscription = this.currentUserState$.subscribe(
@@ -146,9 +146,23 @@ export class StepperComponent implements OnInit, OnDestroy {
         );
     }
 
-    dispatchCreateAction(action: any, payload: any) {
-        this.store.dispatch(updateCurrentLoanApplicationStatusAction({ payload: LOAN_STATUS.PENDING }));
-        this.store.dispatch(action({ payload }));
+    dispatchCreateAction() {
+        this.store.dispatch(
+            updateCurrentLoanApplicationStatusAction({
+                payload: LOAN_STATUS.PENDING,
+            })
+        );
+        this.store.dispatch(
+            createCurrentLoanApplicationAction({
+                payload: {
+                    loanApplication: {
+                        ...this.currentLoanAppplicationState,
+                        status: this.utilService.getRandomLoanStatus(),
+                    },
+                    user: this.currentUserState,
+                },
+            })
+        );
     }
 
     ngOnDestroy() {

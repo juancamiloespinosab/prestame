@@ -15,7 +15,7 @@ export const LINK_DEFAULT_VALUES = {
 export const BUTTON_DEFAULT_VALUES = {
     LABEL: 'button',
     COLOR: 'primary',
-    STEPER_BUTTON: 'none',
+    TYPE: 'normal',
     DISABLED: false,
 };
 

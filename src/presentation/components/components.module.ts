@@ -10,6 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { IconComponent } from './atoms/icon/icon.component';
 import { LinkComponent } from './atoms/link/link.component';
@@ -27,6 +28,7 @@ import { DatepickerComponent } from './atoms/datepicker/datepicker.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from '@core/core.module';
+import { NavMobileComponent } from './molecules/nav-mobile/nav-mobile.component';
 
 @NgModule({
     declarations: [
@@ -43,6 +45,7 @@ import { CoreModule } from '@core/core.module';
         MainLayoutComponent,
         HeaderComponent,
         DatepickerComponent,
+        NavMobileComponent,
     ],
     imports: [
         CoreModule,
@@ -57,6 +60,7 @@ import { CoreModule } from '@core/core.module';
         MatDatepickerModule,
         MatNativeDateModule,
         ReactiveFormsModule,
+        MatSidenavModule,
         RouterModule,
     ],
     exports: [
@@ -72,7 +76,7 @@ import { CoreModule } from '@core/core.module';
         AmountCardComponent,
         MainLayoutComponent,
         HeaderComponent,
-        DatepickerComponent
+        DatepickerComponent,
     ],
 })
 export class ComponentsModule {}
