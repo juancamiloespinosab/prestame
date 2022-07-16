@@ -1,3 +1,4 @@
+import { User } from '../user/user.model';
 import { LOAN_STATUS } from './loan-status.model';
 
 export interface LoanApplication {
@@ -6,4 +7,5 @@ export interface LoanApplication {
     paymentDate: Date | string;
     status: LOAN_STATUS;
     payed: boolean;
+    users?: User[]
 }

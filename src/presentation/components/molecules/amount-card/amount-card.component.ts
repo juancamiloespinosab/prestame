@@ -35,4 +35,8 @@ export class AmountCardComponent implements OnInit {
             this.amount = this.bankState.baseAmount;
         });
     }
+
+    ngOnDestroy() {
+        this.bankStateSubscription.unsubscribe();
+    }
 }

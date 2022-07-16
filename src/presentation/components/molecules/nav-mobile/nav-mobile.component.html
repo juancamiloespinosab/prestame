@@ -1,1 +1,10 @@
-<p>nav-mobile works!</p>
+<div class="pointer">
+    <a-link
+        class="nav-mobile__link display-flex center title full-perecentage"
+        *ngFor="let navigationLink of navigationLinks"
+        [routerLink]="navigationLink.routerLink"
+        [routerLinkActiveClassName]="navigationLink.routerLinkActiveClassName"
+        [name]="navigationLink.name"
+        (onClickEvent)="closeBottomSheet()"
+    ></a-link>
+</div>

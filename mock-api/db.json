@@ -2,257 +2,139 @@
   "loans": [
     {
       "id": 1,
-      "amount": 65000,
-      "paymentDate": "2022-07-27T05:00:00.000Z",
-      "status": "approved",
+      "amount": 100000,
+      "paymentDate": "",
+      "status": "rejected",
       "payed": false
     },
     {
       "id": 2,
-      "amount": 10000,
-      "paymentDate": "2022-07-06T05:00:00.000Z",
-      "status": "approved",
+      "amount": 100000,
+      "paymentDate": "",
+      "status": "rejected",
       "payed": false
     },
     {
       "id": 3,
-      "amount": 10000,
+      "amount": 100000,
       "paymentDate": "",
       "status": "rejected",
       "payed": false
     },
     {
-      "id": 4,
-      "amount": 60000,
-      "paymentDate": "",
-      "status": "approved",
-      "payed": false
+      "id": 4
     },
     {
       "id": 5,
-      "amount": 60000,
+      "amount": 100000,
       "paymentDate": "",
-      "status": "approved",
+      "status": "rejected",
       "payed": false
     },
     {
       "id": 6,
-      "amount": 60000,
-      "paymentDate": "",
-      "status": "approved",
-      "payed": false
-    },
-    {
-      "id": 7,
-      "amount": 60000,
-      "paymentDate": "",
-      "status": "approved",
-      "payed": false
-    },
-    {
-      "id": 8,
-      "amount": 60000,
-      "paymentDate": "",
-      "status": "approved",
-      "payed": false
-    },
-    {
-      "id": 9,
-      "amount": 60000,
+      "amount": 100000,
       "paymentDate": "",
       "status": "rejected",
       "payed": false
     },
     {
-      "id": 10,
-      "amount": 100000,
-      "paymentDate": "",
-      "status": "approved",
-      "payed": false
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
     },
     {
       "id": 11,
       "amount": 100000,
-      "paymentDate": "",
+      "paymentDate": "2022-07-20T05:00:00.000Z",
       "status": "approved",
-      "payed": false
-    },
-    {
-      "id": 12,
-      "amount": 100000,
-      "paymentDate": "",
-      "status": "approved",
-      "payed": false
-    },
-    {
-      "id": 13,
-      "amount": 100000,
-      "paymentDate": "",
-      "status": "rejected",
-      "payed": false
-    },
-    {
-      "id": 14,
-      "amount": 100000,
-      "paymentDate": "",
-      "status": "approved",
-      "payed": false
-    },
-    {
-      "id": 15,
-      "amount": 100000,
-      "paymentDate": "",
-      "status": "rejected",
-      "payed": false
-    },
-    {
-      "id": 16,
-      "amount": 35000,
-      "paymentDate": "",
-      "status": "approved",
-      "payed": false
-    },
-    {
-      "id": 17,
-      "amount": 100000,
-      "paymentDate": "",
-      "status": "approved",
-      "payed": false
-    },
-    {
-      "id": 18,
-      "amount": 100000,
-      "paymentDate": "",
-      "status": "rejected",
       "payed": false
     }
   ],
   "users": [
     {
       "id": 1,
-      "name": "Juan Camilo Espinosa",
+      "name": "Juan Espinosa",
       "email": "juan@email.com",
-      "document": "11036862522",
-      "loanApplicationId": 1
+      "document": "1106852828",
+      "loanId": 1
     },
     {
       "id": 2,
-      "name": "ttt",
-      "email": "mail@mail",
-      "document": "333",
-      "loanApplicationId": 2
+      "name": "Juan Espinosa",
+      "email": "juan@email.com",
+      "document": "110226525",
+      "loanId": 2
     },
     {
       "id": 3,
-      "name": "ttt",
-      "email": "dhdhd@a",
-      "document": "432632",
+      "name": "Juan Espinosa",
+      "email": "juan@email.com",
+      "document": "110226525",
       "loanId": 3
     },
     {
       "id": 4,
-      "name": "t",
-      "email": "a@b",
-      "document": "345",
+      "name": "Juan Espinosa",
+      "email": "juan@email.com",
+      "document": "110226525",
       "loanId": 4
     },
     {
       "id": 5,
-      "name": "t",
-      "email": "a@b",
-      "document": "345",
+      "name": "Juan Espinosa",
+      "email": "juan@email.com",
+      "document": "110226525",
       "loanId": 5
     },
     {
       "id": 6,
-      "name": "t",
-      "email": "a@b",
-      "document": "345",
+      "name": "Juan Espinosa",
+      "email": "juan@email.com",
+      "document": "110226525",
       "loanId": 6
     },
     {
       "id": 7,
-      "name": "t",
-      "email": "a@b",
-      "document": "345",
+      "name": "Juan Espinosa",
+      "email": "juan@email.com",
+      "document": "110226525",
       "loanId": 7
     },
     {
       "id": 8,
-      "name": "t",
-      "email": "a@b",
-      "document": "345",
+      "name": "Juan Espinosa",
+      "email": "juan@email.com",
+      "document": "110226525",
       "loanId": 8
     },
     {
       "id": 9,
-      "name": "t",
-      "email": "a@b",
-      "document": "345",
+      "name": "Juan Espinosa",
+      "email": "juan@email.com",
+      "document": "110226525",
       "loanId": 9
     },
     {
       "id": 10,
-      "name": "loal",
-      "email": "rr@a",
-      "document": "555",
+      "name": "Juan Espinosa",
+      "email": "juan@email.com",
+      "document": "110226525",
       "loanId": 10
     },
     {
       "id": 11,
-      "name": "loal",
-      "email": "rr@a",
-      "document": "555",
+      "name": "chepe",
+      "email": "chepe@aaa",
+      "document": "255225",
       "loanId": 11
-    },
-    {
-      "id": 12,
-      "name": "loal",
-      "email": "rr@a",
-      "document": "555",
-      "loanId": 12
-    },
-    {
-      "id": 13,
-      "name": "loal",
-      "email": "rr@a",
-      "document": "555",
-      "loanId": 13
-    },
-    {
-      "id": 14,
-      "name": "loal",
-      "email": "rr@a",
-      "document": "555",
-      "loanId": 14
-    },
-    {
-      "id": 15,
-      "name": "loal",
-      "email": "rr@a",
-      "document": "555",
-      "loanId": 15
-    },
-    {
-      "id": 16,
-      "name": "bbbb",
-      "email": "nnn@h",
-      "document": "63363",
-      "loanId": 16
-    },
-    {
-      "id": 17,
-      "name": "bbbb",
-      "email": "nnn@h",
-      "document": "63363",
-      "loanId": 17
-    },
-    {
-      "id": 18,
-      "name": "bbbb",
-      "email": "nnn@h",
-      "document": "63363",
-      "loanId": 18
     }
   ]
 }

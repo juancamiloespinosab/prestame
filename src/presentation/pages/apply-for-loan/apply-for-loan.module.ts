@@ -6,7 +6,6 @@ import { ApplyForLoanComponent } from './index/apply-for-loan.component';
 import { ComponentsModule } from '@presentation/components/components.module';
 import { StepperComponent } from './components/stepper/stepper.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { StateModule } from '@presentation/state/state.module';
 import { ResponseComponent } from './components/response/response.component';
 
 const routes: Routes = [
@@ -22,7 +21,6 @@ const routes: Routes = [
         CommonModule,
         ComponentsModule,
         ReactiveFormsModule,
-        StateModule,
         RouterModule.forChild(routes),
     ],
 })

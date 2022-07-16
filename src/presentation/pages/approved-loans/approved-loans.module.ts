@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ComponentsModule } from '@presentation/components/components.module';
 import { ApprovedLoansComponent } from './index/approved-loans.component';
-import { StateModule } from '@presentation/state/state.module';
-import { TableComponent } from './components/table/table.component';
+import { TableContainerComponent } from './components/table-container/table-container.component';
 
 const routes: Routes = [
     {
@@ -14,7 +13,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    declarations: [ApprovedLoansComponent, TableComponent],
-    imports: [CommonModule, ComponentsModule, StateModule, RouterModule.forChild(routes)],
+    declarations: [ApprovedLoansComponent, TableContainerComponent],
+    imports: [CommonModule, ComponentsModule, RouterModule.forChild(routes)],
 })
 export class ApprovedLoansModule {}

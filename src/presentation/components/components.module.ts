@@ -11,6 +11,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTableModule } from '@angular/material/table';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 
 import { IconComponent } from './atoms/icon/icon.component';
 import { LinkComponent } from './atoms/link/link.component';
@@ -29,6 +31,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from '@core/core.module';
 import { NavMobileComponent } from './molecules/nav-mobile/nav-mobile.component';
+import { TableComponent } from './organisms/table/table.component';
 
 @NgModule({
     declarations: [
@@ -46,6 +49,7 @@ import { NavMobileComponent } from './molecules/nav-mobile/nav-mobile.component'
         HeaderComponent,
         DatepickerComponent,
         NavMobileComponent,
+        TableComponent,
     ],
     imports: [
         CoreModule,
@@ -62,6 +66,8 @@ import { NavMobileComponent } from './molecules/nav-mobile/nav-mobile.component'
         ReactiveFormsModule,
         MatSidenavModule,
         RouterModule,
+        MatTableModule,
+        MatBottomSheetModule,
     ],
     exports: [
         MatStepperModule,
@@ -77,6 +83,9 @@ import { NavMobileComponent } from './molecules/nav-mobile/nav-mobile.component'
         MainLayoutComponent,
         HeaderComponent,
         DatepickerComponent,
+        TableComponent,
+        NavMobileComponent,
+        MatBottomSheetModule
     ],
 })
 export class ComponentsModule {}

@@ -11,7 +11,8 @@ import { LoanApplicationRepository } from '@core/repositories';
 })
 export class LoanApplicationWebRepository extends LoanApplicationRepository {
     mockLocalApi = environment.mockLocalApi;
-    loanApplicationWebRepositoryAdapter = new LoanApplicationWebRepositoryAdapter();
+    loanApplicationWebRepositoryAdapter =
+        new LoanApplicationWebRepositoryAdapter();
 
     url = `${this.mockLocalApi.baseUrl}/${this.mockLocalApi.paths.loans}`;
 
@@ -26,14 +27,19 @@ export class LoanApplicationWebRepository extends LoanApplicationRepository {
     }
 
     payLoanApplication(loanApplicationId: number) {
-        return this.httpClient.put(this.url, loanApplicationId);
+        const url = `${this.url}/${loanApplicationId}`;
+        return this.httpClient.put(url, {});
     }
 
-    listAllLoanApplicationsByStatus(
-        status: LOAN_STATUS
+    listAllLoanApplicationsByFilters(
+        status: LOAN_STATUS,
+        payed: boolean
     ): Observable<LoanApplication[]> {
-        const params = new HttpParams();
-        params.append('status', status);
+        const params = new HttpParams().appendAll({
+            status: status,
+            payed: payed,
+            _embed: 'users',
+        });
 
         return this.httpClient.get<LoanApplication[]>(this.url, { params });
     }

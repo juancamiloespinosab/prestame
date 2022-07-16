@@ -3,16 +3,23 @@ import { createAction, props } from '@ngrx/store';
 import { LoanApplication, LOAN_STATUS } from '@core/models';
 
 export enum ApprovedLoansActionTypes {
-    listAllLoanApplicationsByStatus = '[Approved Loans] List All Loan Applications By Status',
-    saveAllLoanApplicationsByStatus = '[Approved Loans] Save All Loan Applications By Status List',
+    listAllLoanApplicationsByFilters = '[Approved Loans] List All Loan Applications By Status',
+    saveAllLoanApplicationsByFilters = '[Approved Loans] Save All Loan Applications By Status List',
+
+    payOneLoanApplicationById = '[Approved Loans] Pay One Loan Application By Id',
 }
 
-export const listAllLoanApplicationsByStatusAction = createAction(
-    ApprovedLoansActionTypes.listAllLoanApplicationsByStatus,
-    props<{ payload: LOAN_STATUS }>()
+export const listAllLoanApplicationsByFiltersAction = createAction(
+    ApprovedLoansActionTypes.listAllLoanApplicationsByFilters,
+    props<{ status: LOAN_STATUS; payed: boolean }>()
 );
 
-export const saveAllLoanApplicationsByStatusAction = createAction(
-    ApprovedLoansActionTypes.saveAllLoanApplicationsByStatus,
+export const saveAllLoanApplicationsByFiltersAction = createAction(
+    ApprovedLoansActionTypes.saveAllLoanApplicationsByFilters,
     props<{ payload: LoanApplication[] }>()
+);
+
+export const payOneLoanApplicationByIdAction = createAction(
+    ApprovedLoansActionTypes.payOneLoanApplicationById,
+    props<{ payload: LoanApplication }>()
 );

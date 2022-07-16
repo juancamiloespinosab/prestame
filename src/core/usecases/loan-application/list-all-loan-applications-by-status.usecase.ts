@@ -7,12 +7,13 @@ import { LoanApplicationRepository } from '@core/repositories'
 @Injectable({
     providedIn: 'root',
 })
-export class ListAllLoanApplicationsByStatusUsecase {
+export class ListAllLoanApplicationsByFiltersUsecase {
     constructor(private loanApplicationRepository: LoanApplicationRepository) {}
 
-    execute(status: LOAN_STATUS): Observable<LoanApplication[]> {
-        return this.loanApplicationRepository.listAllLoanApplicationsByStatus(
-            status
+    execute(status: LOAN_STATUS, payed: boolean): Observable<LoanApplication[]> {
+        return this.loanApplicationRepository.listAllLoanApplicationsByFilters(
+            status,
+            payed
         );
     }
 }

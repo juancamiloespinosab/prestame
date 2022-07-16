@@ -4,7 +4,10 @@
     orientation="vertical"
     [linear]="isLinear"
 >
-    <mat-step *ngFor="let step of loanApplicationSteps">
+    <mat-step
+        *ngFor="let step of loanApplicationSteps"
+        [stepControl]="step.formGroup ?? voidForm"
+    >
         <ng-template matStepLabel>{{ step.name }}</ng-template>
 
         <div class="stepper__step-content display-grid">

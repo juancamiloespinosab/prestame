@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, Validators } from '@angular/forms';
 import { Bank, LoanApplication, LOAN_STATUS, User } from '@core/models';
 import { Store } from '@ngrx/store';
 import { STEPPER_DEFAULT_VALUES } from '@presentation/components/constants';
@@ -7,7 +7,6 @@ import { AppState, Step } from '@presentation/interfaces';
 import { UtilService } from '@presentation/services/util.service';
 import {
     createCurrentLoanApplicationAction,
-    resetCurrentLoanApplicationAction,
     updateCurrentLoanApplicationPaymentDateAction,
     updateCurrentLoanApplicationStatusAction,
     updateCurrentUserDocumentAction,
@@ -37,6 +36,8 @@ export class StepperComponent implements OnInit, OnDestroy {
     currentUserState$: Observable<User>;
     currentUserState: User;
 
+    voidForm = new FormGroup({});
+
     loanApplicationSteps: Step[] = [
         {
             number: 1,
@@ -65,7 +66,7 @@ export class StepperComponent implements OnInit, OnDestroy {
             name: 'Crea tu usuario',
             showBackButton: true,
             backButtonLabel: 'REGRESAR',
-            nextButtonLabel: 'CONTINUAR',
+            nextButtonLabel: 'SOLICITAR PRÉSTAMO',
             isSubmit: true,
             formGroup: new FormGroup({}),
             items: [

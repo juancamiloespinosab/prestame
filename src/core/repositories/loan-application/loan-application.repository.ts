@@ -12,7 +12,7 @@ export abstract class LoanApplicationRepository {
 
     abstract payLoanApplication(loanApplicationId: number): Observable<any>;
 
-    abstract listAllLoanApplicationsByStatus(
-        status: LOAN_STATUS
+    abstract listAllLoanApplicationsByFilters(
+        status: LOAN_STATUS, payed: boolean
     ): Observable<LoanApplication[]>;
 }

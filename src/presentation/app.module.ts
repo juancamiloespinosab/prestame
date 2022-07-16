@@ -6,8 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CoreModule } from '@core/core.module';
+import { StateModule } from './state/state.module';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -16,11 +17,10 @@ import { CoreModule } from '@core/core.module';
         BrowserModule,
         BrowserAnimationsModule,
         CommonModule,
+        ComponentsModule,
         HttpClientModule,
-        AppRoutingModule,
-        StoreDevtoolsModule.instrument({
-            maxAge: 25,
-        }),
+        StateModule,
+        AppRoutingModule
     ],
     bootstrap: [AppComponent],
 })

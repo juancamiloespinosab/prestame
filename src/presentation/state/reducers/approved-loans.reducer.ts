@@ -8,7 +8,7 @@ export const approvedLoansInitialState: LoanApplication[] = [];
 export const approvedLoansReducer = createReducer(
     approvedLoansInitialState,
     on(
-        actions.saveAllLoanApplicationsByStatusAction,
+        actions.saveAllLoanApplicationsByFiltersAction,
         (state, { payload }) => payload
     )
 );
